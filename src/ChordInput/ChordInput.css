@@ -55,3 +55,41 @@
   right: 1.5rem;
   transition: opacity .3s ease-in-out;
 }
+
+/* valid status */
+.valid .chord-prefix {
+  background-color: var(--color-aquamarine);
+  border-color: var(--color-aquamarine);
+  color: white;
+}
+
+.valid .chord-input {
+  border-color: var(--color-aquamarine);
+}
+
+.valid .input-helper {
+  fill: var(--color-aquamarine);
+}
+
+.valid .input-shadow {
+  box-shadow: 0 8px 20px 0 rgba(124,249,180,.1);
+}
+
+/* invalid status */
+.invalid .chord-input {
+  border-color: var(--color-froly);
+}
+
+.invalid .chord-prefix {
+  background-color: var(--color-froly);
+  border-color: var(--color-froly);
+  color: white;
+}
+
+.invalid .input-helper {
+  fill: var(--color-froly);
+}
+
+.invalid .input-shadow {
+  box-shadow: 0 8px 20px 0 rgba(249,124,130,.1);
+}
