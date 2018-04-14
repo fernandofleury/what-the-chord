@@ -69,35 +69,3 @@
   right: 1.5rem;
   transition: opacity .3s ease-in-out;
 }
-
-.timer {
-  margin-top: 5rem;
-  height: 10rem;
-  position: relative;
-  width: 10rem;
-}
-
-.time {
-  color: #f97c82;
-  font-size: 4rem;
-  line-height: 10rem;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-
-@keyframes timer {
-  to {
-    stroke-dashoffset: -600;
-  }
-}
-
-.circle {
-  animation: timer 1s forwards;
-  fill: none;
-  stroke: #f97c82;
-  stroke-dasharray: 600;
-  stroke-linecap: round;
-  stroke-width: .5rem;
-  stroke-dashoffset: 600;
-}

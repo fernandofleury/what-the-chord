@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import returnKey from './icons/return-key.svg';
+import Countdown from './Countdown';
 import './App.css';
 
 class App extends Component {
@@ -15,18 +16,7 @@ class App extends Component {
           <img src={returnKey} className="input-helper" />
         </div>
 
-        <div className="timer">
-          <span className="time">15</span>
-          <svg viewBox="0 0 160 160">
-            <circle
-              transform="rotate(-90, 80, 80)"
-              className="circle"
-              cx="80"
-              cy="80"
-              r="75"
-            />
-          </svg>
-        </div>
+        <Countdown onEnd={() => console.log('done')} />
       </div>
     );
   }

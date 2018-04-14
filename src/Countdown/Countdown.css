@@ -1,0 +1,46 @@
+@keyframes timerColors {
+  0% {
+    color: var(--color-success);
+  }
+
+  33% {
+    color: var(--color-warning);
+  }
+
+  66% {
+    color: var(--color-error);
+  }
+}
+
+@keyframes circleOffset {
+  to {
+    stroke-dashoffset: -600;
+  }
+}
+
+.countdown-wrapper {
+  animation: timerColors 60s infinite step-end;
+  margin-top: 5rem;
+  height: 10rem;
+  position: relative;
+  width: 10rem;
+}
+
+.countdown-time {
+  color: currentColor;
+  font-size: 4rem;
+  line-height: 10rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.countdown-circle {
+  animation: circleOffset 1s infinite forwards;
+  fill: none;
+  stroke: currentColor;
+  stroke-dasharray: 600;
+  stroke-linecap: round;
+  stroke-width: .8rem;
+  stroke-dashoffset: 600;
+}
