@@ -1,0 +1,103 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.chord {
+  font-size: 10rem;
+}
+
+.chord-input-wrapper {
+  align-items: center;
+  display: flex;
+  margin-top: 5rem;
+  position: relative;
+}
+
+.chord-input {
+  border: .1rem solid #c6c6c6;
+  border-radius: 0 .4rem .4rem 0;
+  color: inherit;
+  font-size: 3rem;
+  padding: 1rem 4rem 1rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.chord-input:focus {
+  outline: none;
+}
+
+.chord-input:focus + .input-shadow {
+  opacity: 1;
+}
+
+.chord-input:focus ~ .input-helper {
+  opacity: 1;
+}
+
+.chord-prefix {
+  background-color: #f8f8f8;
+  border: .1rem solid #c6c6c6;
+  border-right: 0;
+  border-radius: .4rem 0 0 .4rem;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.input-shadow {
+  box-shadow: 0 8px 20px 0 rgba(0,0,0,.1);
+  border-radius: .4rem;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  transition: opacity .3s ease-in-out;
+  z-index: -1;
+}
+
+.input-helper {
+  opacity: 0;
+  position: absolute;
+  right: 1.5rem;
+  transition: opacity .3s ease-in-out;
+}
+
+.timer {
+  margin-top: 5rem;
+  height: 10rem;
+  position: relative;
+  width: 10rem;
+}
+
+.time {
+  color: #f97c82;
+  font-size: 4rem;
+  line-height: 10rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes timer {
+  to {
+    stroke-dashoffset: -600;
+  }
+}
+
+.circle {
+  animation: timer 1s forwards;
+  fill: none;
+  stroke: #f97c82;
+  stroke-dasharray: 600;
+  stroke-linecap: round;
+  stroke-width: .5rem;
+  stroke-dashoffset: 600;
+}
