@@ -20,13 +20,13 @@ class Countdown extends PureComponent {
       this.startTime = 0;
     }
 
-    if (this.state.remainingTime) {
+    if (this.state.remainingTime || this.stopped) {
       window.requestAnimationFrame(this.animationFrame);
     }
   };
 
   updateTime() {
-    if (!this.state.remainingTime) {
+    if (!this.state.remainingTime || this.stopped) {
       return;
     }
 
@@ -36,7 +36,12 @@ class Countdown extends PureComponent {
   }
 
   componentDidMount() {
+    this.stopped = false;
     window.requestAnimationFrame(this.animationFrame);
+  }
+
+  componentWillUnmount() {
+    this.stopped = true;
   }
 
   render() {

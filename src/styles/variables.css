@@ -1,6 +1,7 @@
 :root {
-  --main-text-color: #414857;
-  --color-success: #7cf9b4;
-  --color-warning: #f9cd7c;
-  --color-error: #f97c82;
+  --color-river-bed: #414857;
+  --color-boulder: #757575;
+  --color-aquamarine: #7cf9b4;
+  --color-goldenrod: #f9cd7c;
+  --color-froly: #f97c82;
 }

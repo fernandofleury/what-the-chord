@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
-import returnKey from './icons/return-key.svg';
+import ChordInput from './ChordInput';
 import Countdown from './Countdown';
 import './App.css';
+
+const chord = {
+  name: 'A Major 7',
+  root: 'A',
+  notes: ['A', 'C#', 'E', 'G#'],
+  type: 'Major 7th'
+}
 
 class App extends Component {
   render() {
@@ -9,12 +16,7 @@ class App extends Component {
       <div className="container">
         <div className="chord">A Major 7</div>
 
-        <div className="chord-input-wrapper">
-          <span className="chord-prefix">A</span>
-          <input type="text" className="chord-input" placeholder="C#EG#" />
-          <div className="input-shadow" />
-          <img src={returnKey} className="input-helper" />
-        </div>
+        <ChordInput chord={chord} />
 
         <Countdown onEnd={() => console.log('done')} />
       </div>

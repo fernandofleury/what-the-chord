@@ -46,7 +46,7 @@ table {
 	border-spacing: 0;
 }
 html {
-  color: var(--main-text-color);
+  color: var(--color-river-bed);
   box-sizing: border-box;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 10px;
