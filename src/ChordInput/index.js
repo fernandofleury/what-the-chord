@@ -13,7 +13,7 @@ class ChordInput extends PureComponent {
   };
 
   render() {
-    const { root, chordAnswer } = this.props;
+    const { root, chordAnswer, getInputRef } = this.props;
 
     return (
       <div
@@ -21,7 +21,7 @@ class ChordInput extends PureComponent {
         onKeyPress={this.onKeyPress}
       >
         <span className="chord-prefix">{root}</span>
-        <input type="text" className="chord-input" />
+        <input type="text" className="chord-input" ref={getInputRef} />
         <div className="input-shadow" />
         <ReturnKey className="input-helper" />
       </div>

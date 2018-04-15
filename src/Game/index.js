@@ -38,6 +38,8 @@ class Game extends Component {
     const { activeIndex } = this.state;
     const nextIndex = inc(activeIndex);
 
+    this.inputRef.value = '';
+
     this.setState({
       activeChord: this.chords[nextIndex],
       activeIndex: nextIndex,
@@ -74,6 +76,7 @@ class Game extends Component {
           chordAnswer={chordAnswer}
           root={activeChord.root}
           onEnter={this.validateAnswer}
+          getInputRef={(input) => this.inputRef = input}
         />
 
         <Countdown onEnd={this.onEnd} />
