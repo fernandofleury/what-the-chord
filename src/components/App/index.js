@@ -7,7 +7,7 @@ import './App.css';
 
 class App extends PureComponent {
   state = {
-    currentPage: PAGES.game,
+    currentPage: PAGES.home,
   };
 
   render() {

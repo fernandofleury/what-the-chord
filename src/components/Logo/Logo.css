@@ -8,7 +8,7 @@
   top: 2rem;
 }
 
-@media screen and (max-width: 96rem) {
+@media screen and (max-width: 960px) {
   .logo {
     position: static;
     max-width: 10.3rem;

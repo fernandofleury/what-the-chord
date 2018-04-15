@@ -3,7 +3,7 @@
   text-align: center;
 }
 
-@media screen and (max-width: 96rem) {
+@media screen and (max-width: 960px) {
   .chord {
     margin-top: 2rem;
   }

@@ -51,6 +51,9 @@ html {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 10px;
 }
+strong {
+	font-weight: bold;
+}
 *, *:before, *:after {
   box-sizing: inherit;
 }

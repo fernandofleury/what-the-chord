@@ -1,0 +1,54 @@
+.switch {
+  position: relative;
+}
+
+.switch label {
+  cursor: pointer;
+  display: flex;
+  line-height: 2rem;
+}
+
+.switch input[type=checkbox] {
+	height: 0;
+  position: absolute;
+  visibility: hidden;
+	width: 0;
+}
+
+.switch label:before {
+	background: var(--color-boulder);
+	border-radius: 1.8rem;
+  content: '';
+	cursor: pointer;
+	display: block;
+  height: 1.8rem;
+  margin-right: .8rem;
+  position: relative;
+	text-indent: -9999px;
+	width: 3.2rem;
+  z-index: -1;
+}
+
+.switch label:after {
+	background: white;
+	border-radius: 1.4rem;
+	content: '';
+	height: 1.4rem;
+	left: .2rem;
+	top: .2rem;
+	transition: 0.3s;
+	position: absolute;
+	width: 1.4rem;
+}
+
+.switch input:checked + label:before {
+	background: var(--color-medium-purple);
+}
+
+.switch input:checked + label:after {
+	transform: translateX(1.4rem);
+}
+
+.switch label:active:after {
+	width: 1.6rem;
+}

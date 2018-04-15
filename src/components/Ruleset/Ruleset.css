@@ -1,0 +1,29 @@
+.ruleset {
+  margin-top: 3rem;
+}
+
+
+.ruleset-grid {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.ruleset-grid .set-item {
+  width: 50%;
+}
+
+.set-title {
+  color: var(--color-boulder);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.set-item {
+  color: var(--color-boulder);
+  display: flex;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
