@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { func } from 'prop-types';
 import { head, inc } from 'ramda';
 import ChordInput from '../../components/ChordInput';
 import Countdown from '../../components/Countdown';
 import isValid from '../../utils/validateChord';
 import getChords from '../../utils/getChords';
-import { STATUS, TRANSITION_TIMER } from '../../constants';
+import { STATUS, TRANSITION_TIMER, PAGES } from '../../constants';
 import './Game.css';
 
 class Game extends Component {
@@ -61,7 +62,9 @@ class Game extends Component {
     });
   }
 
-  onEnd() {}
+  onEnd = () => {
+    this.props.changePage(PAGES.end);
+  }
 
   render() {
     const { activeChord, chordAnswer } = this.state;
@@ -82,5 +85,9 @@ class Game extends Component {
     );
   }
 }
+
+Game.propTypes = {
+  changePage: func.isRequired,
+};
 
 export default Game;
