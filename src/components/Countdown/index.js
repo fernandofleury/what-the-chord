@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { dec } from 'ramda';
-import { REMAINING_TIME, DELTA_THRESHOLD } from '../constants';
+import { REMAINING_TIME, DELTA_THRESHOLD } from '../../constants';
 import './Countdown.css';
 
 class Countdown extends PureComponent {

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import cn from 'classnames';
-import ReturnKey from '../icons/ReturnKey';
+import ReturnKey from '../../icons/ReturnKey';
 import './ChordInput.css';
 
 const ENTER_KEY = 'Enter';

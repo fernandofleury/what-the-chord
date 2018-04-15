@@ -1,3 +1,8 @@
+export const PAGES = {
+  home: 'home',
+  game: 'game',
+  end: 'end'
+};
 export const STATUS = {
   valid: 'valid',
   invalid: 'invalid',
