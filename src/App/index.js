@@ -1,5 +1,5 @@
 import React from 'react';
-import Game from '../Game';
+import Game from '../pages/Game';
 import './App.css';
 
 const App = () => (

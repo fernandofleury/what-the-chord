@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { head, inc } from 'ramda';
-import ChordInput from '../ChordInput';
-import Countdown from '../Countdown';
-import isValid from '../utils/validateChord';
-import getChords from '../utils/getChords';
-import { STATUS, TRANSITION_TIMER } from '../constants';
+import ChordInput from '../../ChordInput';
+import Countdown from '../../Countdown';
+import isValid from '../../utils/validateChord';
+import getChords from '../../utils/getChords';
+import { STATUS, TRANSITION_TIMER } from '../../constants';
 import './Game.css';
 
 class Game extends Component {
