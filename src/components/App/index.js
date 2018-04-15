@@ -10,16 +10,18 @@ class App extends PureComponent {
     currentPage: PAGES.home,
   };
 
+  changePage = (page) => this.setState({
+    currentPage: page
+  });
+
   render() {
     const { currentPage } = this.state;
 
     return (
       <React.Fragment>
         <Logo />
-        <div className="container">
-          {currentPage === PAGES.home && <Home />}
-          {currentPage === PAGES.game && <Game />}
-        </div>
+        {currentPage === PAGES.home && <Home changePage={this.changePage} />}
+        {currentPage === PAGES.game && <Game changePage={this.changePage} />}
       </React.Fragment>
     );
   }

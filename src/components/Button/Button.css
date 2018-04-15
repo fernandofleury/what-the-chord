@@ -1,0 +1,21 @@
+.button {
+  background-color: white;
+  border: .1rem solid var(--color-medium-purple);
+  box-shadow: .5rem .5rem 0 var(--color-medium-purple);
+  color: var(--color-medium-purple);
+  cursor: pointer;
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 3.5rem;
+  text-transform: uppercase;
+  transition: box-shadow .2s ease-in-out;
+  width: 100%;
+}
+
+.button:hover {
+  box-shadow: none;
+}
+
+.button:focus, .button:active {
+  outline: none;
+}

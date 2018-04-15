@@ -2,6 +2,11 @@
   max-width: 60rem;
 }
 
+.home .button {
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
 .title {
   font-size: 8rem;
   text-transform: uppercase;

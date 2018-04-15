@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { func } from 'prop-types';
 import { dec } from 'ramda';
 import { REMAINING_TIME, DELTA_THRESHOLD } from '../../constants';
 import './Countdown.css';
@@ -68,5 +69,9 @@ class Countdown extends PureComponent {
     );
   }
 }
+
+Countdown.propTypes = {
+  onEnd: func.isRequired,
+};
 
 export default Countdown;

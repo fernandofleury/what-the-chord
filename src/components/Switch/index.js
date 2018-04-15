@@ -1,4 +1,5 @@
 import React from 'react';
+import { node, string } from 'prop-types';
 import './Switch.css';
 
 const Switch = ({ children, on, disabled, id }) => (
@@ -7,5 +8,12 @@ const Switch = ({ children, on, disabled, id }) => (
     <label htmlFor={id}>{children}</label>
   </div>
 );
+
+Switch.propTypes = {
+  children: node,
+  on: string,
+  disabled: string,
+  id: string,
+};
 
 export default Switch;

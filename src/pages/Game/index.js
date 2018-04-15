@@ -22,7 +22,7 @@ class Game extends Component {
     });
   }
 
-  validateAnswer = (answer) => {
+  validateAnswer = answer => {
     const { activeChord } = this.state;
 
     if (isValid(activeChord, answer)) {
@@ -30,7 +30,7 @@ class Game extends Component {
     }
 
     return this.chordError();
-  }
+  };
 
   hasNext = () => inc(this.state.activeIndex) < this.chords.length;
 
@@ -47,7 +47,7 @@ class Game extends Component {
     });
 
     setTimeout(() => this.updateAnswer(), TRANSITION_TIMER);
-  };
+  }
 
   chordError() {
     this.updateAnswer(STATUS.invalid);
@@ -57,30 +57,28 @@ class Game extends Component {
 
   updateAnswer(status) {
     this.setState({
-      chordAnswer: status
+      chordAnswer: status,
     });
   }
 
-  onEnd() {
-
-  }
+  onEnd() {}
 
   render() {
     const { activeChord, chordAnswer } = this.state;
 
     return (
-      <React.Fragment>
+      <div className="container">
         <div className="chord">{activeChord.name}</div>
 
         <ChordInput
           chordAnswer={chordAnswer}
           root={activeChord.root}
           onEnter={this.validateAnswer}
-          getInputRef={(input) => this.inputRef = input}
+          getInputRef={input => (this.inputRef = input)}
         />
 
         <Countdown onEnd={this.onEnd} />
-      </React.Fragment>
+      </div>
     );
   }
 }

@@ -14,7 +14,7 @@ const Ruleset = () => (
       <div className="set-title">OPTIONS</div>
       <div className="set-item">
         <Switch id="caged" on="on" disabled="disabled">
-          CAGED chords
+          CAGED chords only (beta)
         </Switch>
       </div>
     </div>

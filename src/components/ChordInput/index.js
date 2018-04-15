@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { string, func } from 'prop-types';
 import cn from 'classnames';
 import ReturnKey from '../../icons/ReturnKey';
 import './ChordInput.css';
@@ -28,5 +29,11 @@ class ChordInput extends PureComponent {
     );
   }
 }
+
+ChordInput.propTypes = {
+  root: string,
+  chordAnswer: string,
+  getInputRef: func.isRequired,
+};
 
 export default ChordInput;
