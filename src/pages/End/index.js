@@ -12,7 +12,7 @@ const End = ({ changePage }) => (
       </h1>
       <div className="button-grid">
         <Button onClick={() => changePage(PAGES.game)}>play again</Button>
-        <Button onClick={() => changePage(PAGES.home)}>back home</Button>
+        <Button onClick={() => changePage(PAGES.home)}>go home</Button>
       </div>
     </div>
   </div>
