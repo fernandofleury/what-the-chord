@@ -19,3 +19,10 @@
 .button:focus, .button:active {
   outline: none;
 }
+
+@media screen and (max-width: 960px) {
+  .button {
+    padding: 2rem;
+    font-size: 2.5rem;
+  }
+}

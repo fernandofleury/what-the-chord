@@ -10,8 +10,11 @@
 
 @media screen and (max-width: 960px) {
   .logo {
-    position: static;
-    max-width: 10.3rem;
+    font-size: 1.8rem;
+    height: 7rem;
     margin: 2rem;
+    padding: .8rem;
+    position: static;
+    width: 7.6rem;
   }
 }

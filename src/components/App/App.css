@@ -15,10 +15,19 @@
   padding: 2rem;
 }
 
+.title {
+  font-size: 8rem;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 960px) {
   .container {
     height: auto;
     margin-top: 2rem;
     padding: 2rem;
+  }
+
+  .title {
+    font-size: 4rem;
   }
 }
