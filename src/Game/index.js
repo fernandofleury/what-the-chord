@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ChordInput from './ChordInput';
-import Countdown from './Countdown';
-import './App.css';
+import ChordInput from '../ChordInput';
+import Countdown from '../Countdown';
+import './Game.css';
 
 const chord = {
   name: 'A Maj. 7',
@@ -10,18 +10,18 @@ const chord = {
   type: 'Major 7th'
 };
 
-class App extends Component {
+class Game extends Component {
   render() {
     return (
-      <div className="container">
+      <React.Fragment>
         <div className="chord">{chord.name}</div>
 
         <ChordInput chord={chord} />
 
         <Countdown onEnd={() => console.log('done')} />
-      </div>
+      </React.Fragment>
     );
   }
 }
 
-export default App;
+export default Game;
