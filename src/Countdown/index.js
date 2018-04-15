@@ -1,47 +1,54 @@
 import React, { PureComponent } from 'react';
+import { dec } from 'ramda';
 import './Countdown.css';
+
+const REMAINING_TIME = 60;
+const THRESHOLD = 1000;
 
 class Countdown extends PureComponent {
   state = {
-    remainingTime: 60,
+    remainingTime: REMAINING_TIME,
   };
 
-  updateDiff = 1000;
+  animationLoop = timestamp => {
+    if (!this.state.remainingTime) {
+      return this.cancelLoop();
+    }
 
-  animationFrame = timestamp => {
     if (!this.startTime) {
       this.startTime = timestamp;
     }
 
-    this.delta = timestamp - this.startTime;
-
-    if (this.delta >= this.updateDiff) {
-      this.updateTime();
+    if (timestamp - this.startTime >= THRESHOLD) {
+      this.updateTimer();
       this.startTime = 0;
     }
 
-    if (this.state.remainingTime || this.stopped) {
-      window.requestAnimationFrame(this.animationFrame);
-    }
+    this.loopId = window.requestAnimationFrame(this.animationLoop);
   };
 
-  updateTime() {
-    if (!this.state.remainingTime || this.stopped) {
-      return;
+  updateTimer() {
+    if (!this.state.remainingTime) {
+      return this.cancelLoop();
     }
 
     this.setState({
-      remainingTime: this.state.remainingTime - 1,
+      remainingTime: dec(this.state.remainingTime),
     });
   }
 
+  cancelLoop() {
+    if (this.loopId) {
+      window.cancelAnimationFrame(this.loopId);
+    }
+  }
+
   componentDidMount() {
-    this.stopped = false;
-    window.requestAnimationFrame(this.animationFrame);
+    window.requestAnimationFrame(this.animationLoop);
   }
 
   componentWillUnmount() {
-    this.stopped = true;
+    this.cancelLoop();
   }
 
   render() {

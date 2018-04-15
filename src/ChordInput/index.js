@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReturnKey from '../icons/ReturnKey';
 import './ChordInput.css';
 
