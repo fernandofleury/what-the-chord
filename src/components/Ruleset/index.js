@@ -6,7 +6,10 @@ const Ruleset = () => (
   <React.Fragment>
     <div className="ruleset">
       <div className="set-title">RULES</div>
-      <div className="set-item">- enter the required notes for each chord</div>
+      <div className="set-item">- Enter the required notes for each chord. For example E Major: EG#B</div>
+      <div className="set-item">- No spaces or commas required</div>
+      <div className="set-item">- Lowercase or uppercase</div>
+      <div className="set-item">- Root note already prefilled</div>
       <div className="set-item">- 60 seconds</div>
     </div>
 
