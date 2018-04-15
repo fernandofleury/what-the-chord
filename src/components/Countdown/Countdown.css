@@ -19,7 +19,7 @@
 }
 
 .countdown-wrapper {
-  animation: timerColors 60s infinite step-end;
+  animation: timerColors 61s infinite step-end;
   margin-top: 5rem;
   height: 10rem;
   position: relative;
