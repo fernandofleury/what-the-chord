@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import { dec } from 'ramda';
+import { REMAINING_TIME, DELTA_THRESHOLD } from '../constants';
 import './Countdown.css';
-
-const REMAINING_TIME = 60;
-const THRESHOLD = 1000;
 
 class Countdown extends PureComponent {
   state = {
@@ -19,7 +17,7 @@ class Countdown extends PureComponent {
       this.startTime = timestamp;
     }
 
-    if (timestamp - this.startTime >= THRESHOLD) {
+    if (timestamp - this.startTime >= DELTA_THRESHOLD) {
       this.updateTimer();
       this.startTime = 0;
     }
@@ -38,6 +36,8 @@ class Countdown extends PureComponent {
   }
 
   cancelLoop() {
+    this.props.onEnd();
+
     if (this.loopId) {
       window.cancelAnimationFrame(this.loopId);
     }

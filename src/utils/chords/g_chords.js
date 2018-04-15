@@ -20,7 +20,7 @@ export default [
   {
     name: 'G Min. 7',
     root: 'G',
-    notes: ['G', 'B', 'D', 'F'],
+    notes: ['G', 'Bb', 'D', 'F'],
     type: 'Minor 7th',
   },
   {

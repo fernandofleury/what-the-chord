@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import cn from 'classnames';
 import ReturnKey from '../icons/ReturnKey';
 import './ChordInput.css';
 
-const ChordInput = ({ chord }) => (
-  <div className="chord-input-wrapper">
-    <span className="chord-prefix">{chord.root}</span>
-    <input type="text" className="chord-input" placeholder="C#EG#" />
-    <div className="input-shadow" />
-    <ReturnKey className="input-helper" />
-  </div>
-);
+const ENTER_KEY = 'Enter';
+
+class ChordInput extends PureComponent {
+  onKeyPress = e => {
+    if (e.key === ENTER_KEY) {
+      this.props.onEnter(e.target.value);
+    }
+  };
+
+  render() {
+    const { root, chordAnswer } = this.props;
+
+    return (
+      <div
+        className={cn('chord-input-wrapper', chordAnswer)}
+        onKeyPress={this.onKeyPress}
+      >
+        <span className="chord-prefix">{root}</span>
+        <input type="text" className="chord-input" />
+        <div className="input-shadow" />
+        <ReturnKey className="input-helper" />
+      </div>
+    );
+  }
+}
 
 export default ChordInput;
