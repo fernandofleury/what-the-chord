@@ -27,7 +27,7 @@ export default [
     name: 'A Dominant',
     root: 'A',
     notes: ['A', 'C#', 'E', 'G'],
-    type: 'Dominant',
+    type: 'Dominant 7th',
   },
   {
     name: 'A Half Dim. 7',

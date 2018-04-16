@@ -1,5 +1,6 @@
 .switch {
-  position: relative;
+	position: relative;
+	user-select: none;
 }
 
 .switch label {

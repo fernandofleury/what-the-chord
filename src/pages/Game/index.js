@@ -16,7 +16,7 @@ class Game extends Component {
   };
 
   componentDidMount() {
-    this.chords = getChords();
+    this.chords = getChords(this.props.qualities);
 
     this.setState({
       activeChord: head(this.chords),
@@ -27,7 +27,7 @@ class Game extends Component {
     const { activeChord } = this.state;
 
     if (isValid(activeChord, answer)) {
-      return this.hasNext() ? this.nextChord() : this.endGame();
+      return this.hasNext() ? this.nextChord() : this.onEnd();
     }
 
     return this.chordError();
@@ -64,7 +64,7 @@ class Game extends Component {
 
   onEnd = () => {
     this.props.changePage(PAGES.end);
-  }
+  };
 
   render() {
     const { activeChord, chordAnswer } = this.state;
