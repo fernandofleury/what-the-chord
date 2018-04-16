@@ -10,12 +10,12 @@ export const STATUS = {
 export const QUALITIES = {
   'Major': true,
   'Minor': true,
-  'Major 7th': true,
-  'Minor 7th': true,
-  'Dominant 7th': true,
-  'Half Diminished 7th': true,
-  'Diminished 7th': true,
-  'Augmented': true
+  'Major 7th': false,
+  'Minor 7th': false,
+  'Dominant 7th': false,
+  'Half Diminished 7th': false,
+  'Diminished 7th': false,
+  'Augmented': false
 };
 export const CHORDS_LENGTH = 20;
 export const REMAINING_TIME = 60;
