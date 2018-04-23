@@ -1,4 +1,4 @@
-import isValid, { normalizeChord, normalizeAnswer } from './validateChord';
+import isValid, { normalizeChord, normalizeAnswer } from './index';
 
 describe('validateChord utils spec', () => {
   describe('normalizeChord', () => {

@@ -1,5 +1,5 @@
-import getChords, { predicate, shuffle } from './getChords';
-import { CHORDS_LENGTH } from '../constants';
+import getChords, { predicate, shuffle } from './index';
+import { CHORDS_LENGTH } from '../../constants';
 
 describe('getChords utils spec', () => {
   describe('predicate', () => {

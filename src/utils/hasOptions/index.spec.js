@@ -1,4 +1,4 @@
-import hasOptions from './hasOptions';
+import hasOptions from './index';
 
 describe('hasOptions utils spec', () => {
   it('returns true if at least one key/value is true', () => {

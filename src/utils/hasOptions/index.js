@@ -1,5 +1,5 @@
 import { compose, values, filter, identity, prop, gte, __ } from 'ramda';
-import { MIN_OPTIONS } from '../constants';
+import { MIN_OPTIONS } from '../../constants';
 
 const hasOptions = compose(
   gte(__, MIN_OPTIONS),
