@@ -1,5 +1,5 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, objectOf, bool } from 'prop-types';
 import Switch from '../Switch';
 import './Ruleset.css';
 
@@ -108,6 +108,7 @@ const Ruleset = ({ changeQualities, qualities }) => (
 
 Ruleset.propTypes = {
   changeQualities: func.isRequired,
+  qualities: objectOf(bool),
 };
 
 export default Ruleset;

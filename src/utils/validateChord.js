@@ -1,8 +1,8 @@
 import { join, concat, toUpper, equals, replace, compose } from 'ramda';
 
-const normalizedChord = compose(toUpper, join(''));
+export const normalizedChord = compose(toUpper, join(''));
 
-const normalizedAnswer = compose(replace(/[^A-Z|#]/g, ''), toUpper);
+export const normalizedAnswer = compose(replace(/[^A-Z|#]/g, ''), toUpper);
 
 const isValid = (chord, answer) =>
   equals(

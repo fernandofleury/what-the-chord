@@ -1,5 +1,5 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, objectOf, bool } from 'prop-types';
 import Ruleset from '../../components/Ruleset';
 import Button from '../../components/Button';
 import { PAGES } from '../../constants';
@@ -20,6 +20,7 @@ const Home = ({ changePage, changeQualities, qualities }) => (
 Home.propTypes = {
   changePage: func.isRequired,
   changeQualities: func.isRequired,
+  qualities: objectOf(bool),
 };
 
 export default Home;

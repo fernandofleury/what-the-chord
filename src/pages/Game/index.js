@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func } from 'prop-types';
+import { func, objectOf, bool } from 'prop-types';
 import { head, inc } from 'ramda';
 import ChordInput from '../../components/ChordInput';
 import Countdown from '../../components/Countdown';
@@ -88,6 +88,7 @@ class Game extends Component {
 
 Game.propTypes = {
   changePage: func.isRequired,
+  qualities: objectOf(bool),
 };
 
 export default Game;
