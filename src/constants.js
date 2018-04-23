@@ -17,6 +17,7 @@ export const QUALITIES = {
   'Diminished 7th': false,
   'Augmented': false
 };
+export const MIN_OPTIONS = 1;
 export const CHORDS_LENGTH = 20;
 export const REMAINING_TIME = 60;
 export const DELTA_THRESHOLD = 1000;

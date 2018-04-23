@@ -4,6 +4,7 @@ import Game from '../../pages/Game';
 import End from '../../pages/End';
 import Logo from '../../components/Logo';
 import { PAGES, QUALITIES } from '../../constants';
+import hasOptions from '../../utils/hasOptions';
 import './App.css';
 
 class App extends PureComponent {
@@ -17,13 +18,20 @@ class App extends PureComponent {
       currentPage: page,
     });
 
-  changeQualities = qualities =>
-    this.setState({
-      qualities: {
-        ...this.state.qualities,
-        ...qualities,
-      },
-    });
+  changeQualities = qualities => {
+    const newQualitites = {
+      ...this.state.qualities,
+      ...qualities,
+    };
+
+    if (hasOptions(newQualitites)) {
+      this.setState({
+        qualities: {
+          ...newQualitites,
+        },
+      });
+    }
+  };
 
   render() {
     const { currentPage, qualities } = this.state;
