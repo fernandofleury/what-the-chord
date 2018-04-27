@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import { withStateHandlers } from 'recompose';
 import Home from '../../pages/Home';
 import Game from '../../pages/Game';
 import End from '../../pages/End';
@@ -7,52 +8,45 @@ import { PAGES, QUALITIES } from '../../constants';
 import hasOptions from '../../utils/hasOptions';
 import './App.css';
 
-class App extends PureComponent {
-  state = {
+const App = ({ currentPage, qualities, changePage, changeQualities }) => (
+  <React.Fragment>
+    <Logo />
+    {currentPage === PAGES.home && (
+      <Home
+        qualities={qualities}
+        changeQualities={changeQualities}
+        changePage={changePage}
+      />
+    )}
+    {currentPage === PAGES.game && (
+      <Game qualities={qualities} changePage={changePage} />
+    )}
+    {currentPage === PAGES.end && <End changePage={changePage} />}
+  </React.Fragment>
+);
+
+const enhance = withStateHandlers(
+  {
     currentPage: PAGES.home,
     qualities: QUALITIES,
-  };
+  },
+  {
+    changePage: () => page => ({ currentPage: page }),
+    changeQualities: ({ qualities }) => newQualities => {
+      const mergedQualities = {
+        ...qualities,
+        ...newQualities,
+      };
 
-  changePage = page =>
-    this.setState({
-      currentPage: page,
-    });
-
-  changeQualities = qualities => {
-    const newQualitites = {
-      ...this.state.qualities,
-      ...qualities,
-    };
-
-    if (hasOptions(newQualitites)) {
-      this.setState({
-        qualities: {
-          ...newQualitites,
-        },
-      });
-    }
-  };
-
-  render() {
-    const { currentPage, qualities } = this.state;
-
-    return (
-      <React.Fragment>
-        <Logo />
-        {currentPage === PAGES.home && (
-          <Home
-            qualities={qualities}
-            changeQualities={this.changeQualities}
-            changePage={this.changePage}
-          />
-        )}
-        {currentPage === PAGES.game && (
-          <Game qualities={qualities} changePage={this.changePage} />
-        )}
-        {currentPage === PAGES.end && <End changePage={this.changePage} />}
-      </React.Fragment>
-    );
+      if (hasOptions(mergedQualities)) {
+        return {
+          qualities: {
+            ...mergedQualities,
+          },
+        };
+      }
+    },
   }
-}
+);
 
-export default App;
+export default enhance(App);

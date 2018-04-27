@@ -9,7 +9,8 @@
     "ramda": "^0.25.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "recompose": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",

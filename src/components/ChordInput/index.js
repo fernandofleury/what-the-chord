@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import { withHandlers } from 'recompose';
 import { string, func } from 'prop-types';
 import cn from 'classnames';
 import ReturnKey from '../../icons/ReturnKey';
@@ -6,29 +7,17 @@ import './ChordInput.css';
 
 const ENTER_KEY = 'Enter';
 
-class ChordInput extends PureComponent {
-  onKeyPress = e => {
-    if (e.key === ENTER_KEY) {
-      this.props.onEnter(e.target.value);
-    }
-  };
-
-  render() {
-    const { root, chordAnswer, getInputRef } = this.props;
-
-    return (
-      <div
-        className={cn('chord-input-wrapper', chordAnswer)}
-        onKeyPress={this.onKeyPress}
-      >
-        <span className="chord-prefix">{root}</span>
-        <input type="text" className="chord-input" ref={getInputRef} />
-        <div className="input-shadow" />
-        <ReturnKey className="input-helper" />
-      </div>
-    );
-  }
-}
+const ChordInput = ({ root, chordAnswer, getInputRef, onKeyPress }) => (
+  <div
+    className={cn('chord-input-wrapper', chordAnswer)}
+    onKeyPress={onKeyPress}
+  >
+    <span className="chord-prefix">{root}</span>
+    <input type="text" className="chord-input" ref={getInputRef} />
+    <div className="input-shadow" />
+    <ReturnKey className="input-helper" />
+  </div>
+);
 
 ChordInput.propTypes = {
   root: string,
@@ -36,4 +25,12 @@ ChordInput.propTypes = {
   getInputRef: func.isRequired,
 };
 
-export default ChordInput;
+const enhance = withHandlers({
+  onKeyPress: props => e => {
+    if (e.key === ENTER_KEY) {
+      props.onEnter(e.target.value);
+    }
+  },
+});
+
+export default enhance(ChordInput);
